@@ -1,0 +1,707 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%3C!--%20Generator%3A%20Adobe%20Illustrator%2019.0.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%3C!--%20License%3A%20CC0.%20Made%20by%20SVG%20Repo%3A%20https%3A%2F%2Fwww.svgrepo.com%2Fsvg%2F34540%2Fcolor%20--%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20496%20496%22%20style%3D%22enable-background%3Anew%200%200%20496%20496%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20style%3D%22fill%3A%23FF2970%3B%22%20d%3D%22M496%2C465.6c0%2C16.8-13.6%2C30.4-30.4%2C30.4h-208c-16.8%2C0-30.4-13.6-30.4-30.4v-208c0-16.8%2C13.6-30.4%2C30.4-30.4h208c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4V465.6z%22%2F%3E%3Cpath%20style%3D%22fill%3A%23D10257%3B%22%20d%3D%22M465.6%2C227.2c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4v208c0%2C16.8-13.6%2C30.4-30.4%2C30.4h-208c-16.8%2C0-30.4-13.6-30.4-30.4%22%2F%3E%3Cpath%20style%3D%22fill%3A%235349B7%3B%22%20d%3D%22M382.4%2C352c0%2C16.8-13.6%2C30.4-30.4%2C30.4H144c-16.8%2C0-30.4-13.6-30.4-30.4V144c0-16.8%2C13.6-30.4%2C30.4-30.4h208c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4V352z%22%2F%3E%3Cg%3E%3Cpath%20style%3D%22fill%3A%233B38A5%3B%22%20d%3D%22M171.2%2C113.6l-57.6%2C57.6V292h148c16.8%2C0%2C30.4-13.6%2C30.4-30.4v-148H171.2z%22%2F%3E%3Cpath%20style%3D%22fill%3A%233B38A5%3B%22%20d%3D%22M352%2C113.6c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4v208c0%2C16.8-13.6%2C30.4-30.4%2C30.4H144c-16.8%2C0-30.4-13.6-30.4-30.4%22%2F%3E%3C%2Fg%3E%3Cpath%20style%3D%22fill%3A%23D10257%3B%22%20d%3D%22M274.4%2C227.2l-47.2%2C47.2v126.4h143.2c16.8%2C0%2C30.4-13.6%2C30.4-30.4V227.2H274.4z%22%2F%3E%3Cpath%20style%3D%22fill%3A%2337167F%3B%22%20d%3D%22M257.6%2C227.2c-16.8%2C0-30.4%2C13.6-30.4%2C30.4v124.8H352c16.8%2C0%2C30.4-13.6%2C30.4-30.4V227.2H257.6z%22%2F%3E%3Cpath%20style%3D%22fill%3A%232EB9FF%3B%22%20d%3D%22M268.8%2C238.4c0%2C16.8-13.6%2C30.4-30.4%2C30.4h-208C13.6%2C268.8%2C0%2C255.2%2C0%2C238.4v-208C0%2C13.6%2C13.6%2C0%2C30.4%2C0h208c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4V238.4z%22%2F%3E%3Cpath%20style%3D%22fill%3A%230097F4%3B%22%20d%3D%22M238.4%2C0c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4v208c0%2C16.8-13.6%2C30.4-30.4%2C30.4h-208C13.6%2C268.8%2C0%2C255.2%2C0%2C238.4%22%2F%3E%3C%2Fsvg%3E" />
+  <title>Color Palette Generator</title>
+  <style>
+    body {
+      margin: 50px 50px;
+      padding: 0;
+      background-color: #27262B;
+      font-family: 'Segoe UI';
+    }
+
+    h1 {
+      color: #ffffff;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+
+    img {
+      width: 60px;
+      margin-right: 20px;
+    }
+
+    .control-tab {
+      /* border: 1px solid red; */
+      width: fit-content;
+      display: flex;
+      user-select: none;
+    }
+
+    .add-color-btn {
+      width: 200px;
+      height: 50px;
+      border-radius: 50px;
+
+      font-size: 16px;
+      font-weight: 500;
+      color: #000000;
+      background-color: #DEE069;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .add-color-btn:hover {
+      cursor: pointer;
+      opacity: 0.95;
+    }
+
+    .input-shade-tab {
+      /* border: 1px solid red; */
+      height: 50px;
+      border-radius: 30px;
+      margin-left: 50px;
+      padding: 0 30px;
+
+      background-color: #DEE069;
+
+      display: flex;
+    }
+
+    .shade-text {
+      height: 50px;
+      padding: 0 10px;
+
+      color: #000000;
+      font-size: 16px;
+      font-weight: 500;
+
+      display: flex;
+      text-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .input-shade-number {
+      display: flex;
+    }
+
+    .input-shade-number>div {
+      display: block;
+      margin-left: 5px;
+    }
+
+    #shade-number {
+      border: none;
+      outline: none;
+      width: 40px;
+      height: 50px;
+      padding: 0;
+      border-radius: 3px;
+
+      color: #000000;
+      background-color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .shade-btn {
+      /* border: 1px solid red; */
+      box-sizing: border-box;
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      margin: 0;
+
+      color: #000000;
+      font-weight: 500;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      cursor: pointer;
+    }
+
+    .colors {
+      /* border: 1px solid red; */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 220px);
+    }
+
+    .palette-box {
+      /* border: 1px solid red; */
+      width: fit-content;
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    canvas {
+      width: 200px;
+      height: 200px;
+    }
+
+    .input-hex-color {
+      width: 200px;
+      box-sizing: border-box;
+      width: 200px;
+      height: 40px;
+
+      font-size: 20px;
+      text-align: center;
+
+      border: 0;
+      outline: none;
+      margin: 0 0 20px 0;
+    }
+
+    .input-color {
+      box-sizing: border-box;
+      width: 200px;
+      height: 60px;
+
+      border: 0;
+      padding: 0;
+      background: none;
+
+      display: none;
+    }
+
+    .input-color:hover {
+      cursor: pointer;
+      opacity: 0.95;
+    }
+
+    .input-color::-webkit-color-swatch-wrapper {
+      padding: 0;
+      border-radius: 0;
+    }
+
+    .input-color::-webkit-color-swatch {
+      border: none;
+    }
+
+    .palette {
+      width: fit-content;
+      padding: 0px;
+
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      background-color: #fff;
+
+      position: relative;
+    }
+
+    .color-box {
+      width: 200px;
+      height: 40px;
+      margin: 0;
+
+      color: #ffffff;
+      font-weight: bold;
+
+      display: flex;
+      justify-content: end;
+      align-items: center;
+
+      cursor: pointer;
+    }
+
+    .color-box:hover {
+      cursor: pointer;
+    }
+
+    .color-box:hover>.hex-label {
+      opacity: 0.8;
+    }
+
+    .hex-label {
+      border-radius: 3px;
+      width: 70px;
+      margin-right: 10px;
+      padding: 4px 4px;
+      background-color: rgba(255, 255, 255, 0.7);
+
+      color: #000000;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .hover-text {
+      height: 60px;
+      border-radius: 2px;
+      padding: 0 10px;
+
+      position: absolute;
+      top: -80px;
+      left: 0px;
+
+      font-size: 18px;
+      font-weight: 500;
+      color: #000000;
+      background-color: #fff;
+      box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.55);
+
+      display: flex;
+      text-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      z-index: 99;
+    }
+
+    .delete-palette-box {
+      /* border: 1px solid red; */
+      width: 200px;
+      height: 50px;
+      border-radius: 30px;
+
+      font-size: 26px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .delete-palette-box:hover {
+      background-color: #DEE069;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>
+    <img src="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%3C!--%20Generator%3A%20Adobe%20Illustrator%2019.0.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%3C!--%20License%3A%20CC0.%20Made%20by%20SVG%20Repo%3A%20https%3A%2F%2Fwww.svgrepo.com%2Fsvg%2F34540%2Fcolor%20--%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20496%20496%22%20style%3D%22enable-background%3Anew%200%200%20496%20496%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20style%3D%22fill%3A%23FF2970%3B%22%20d%3D%22M496%2C465.6c0%2C16.8-13.6%2C30.4-30.4%2C30.4h-208c-16.8%2C0-30.4-13.6-30.4-30.4v-208c0-16.8%2C13.6-30.4%2C30.4-30.4h208c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4V465.6z%22%2F%3E%3Cpath%20style%3D%22fill%3A%23D10257%3B%22%20d%3D%22M465.6%2C227.2c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4v208c0%2C16.8-13.6%2C30.4-30.4%2C30.4h-208c-16.8%2C0-30.4-13.6-30.4-30.4%22%2F%3E%3Cpath%20style%3D%22fill%3A%235349B7%3B%22%20d%3D%22M382.4%2C352c0%2C16.8-13.6%2C30.4-30.4%2C30.4H144c-16.8%2C0-30.4-13.6-30.4-30.4V144c0-16.8%2C13.6-30.4%2C30.4-30.4h208c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4V352z%22%2F%3E%3Cg%3E%3Cpath%20style%3D%22fill%3A%233B38A5%3B%22%20d%3D%22M171.2%2C113.6l-57.6%2C57.6V292h148c16.8%2C0%2C30.4-13.6%2C30.4-30.4v-148H171.2z%22%2F%3E%3Cpath%20style%3D%22fill%3A%233B38A5%3B%22%20d%3D%22M352%2C113.6c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4v208c0%2C16.8-13.6%2C30.4-30.4%2C30.4H144c-16.8%2C0-30.4-13.6-30.4-30.4%22%2F%3E%3C%2Fg%3E%3Cpath%20style%3D%22fill%3A%23D10257%3B%22%20d%3D%22M274.4%2C227.2l-47.2%2C47.2v126.4h143.2c16.8%2C0%2C30.4-13.6%2C30.4-30.4V227.2H274.4z%22%2F%3E%3Cpath%20style%3D%22fill%3A%2337167F%3B%22%20d%3D%22M257.6%2C227.2c-16.8%2C0-30.4%2C13.6-30.4%2C30.4v124.8H352c16.8%2C0%2C30.4-13.6%2C30.4-30.4V227.2H257.6z%22%2F%3E%3Cpath%20style%3D%22fill%3A%232EB9FF%3B%22%20d%3D%22M268.8%2C238.4c0%2C16.8-13.6%2C30.4-30.4%2C30.4h-208C13.6%2C268.8%2C0%2C255.2%2C0%2C238.4v-208C0%2C13.6%2C13.6%2C0%2C30.4%2C0h208c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4V238.4z%22%2F%3E%3Cpath%20style%3D%22fill%3A%230097F4%3B%22%20d%3D%22M238.4%2C0c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4v208c0%2C16.8-13.6%2C30.4-30.4%2C30.4h-208C13.6%2C268.8%2C0%2C255.2%2C0%2C238.4%22%2F%3E%3C%2Fsvg%3E">
+    Color Palette Generator
+  </h1>
+  <div class="control-tab">
+    <div class="add-color-btn" onclick="addMoreColor()">➕ Add More Color</div>
+    <div class="input-shade-tab">
+      <div class="shade-text">Shade number (3 - 21) : </div>
+      <div class="input-shade-number">
+        <div id="shade-number">9</div>
+        <div>
+          <span class="shade-btn" onclick="updateShadeNumber(1)">➕</span>
+          <span class="shade-btn" onclick="updateShadeNumber(-1)">➖</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="colors">
+  </div>
+
+  <script>
+    // Helper function to convert HEX to RGB
+    function hexToRgb(hex) {
+      const bigint = parseInt(hex.slice(1), 16);
+      const r = (bigint >> 16) & 255;
+      const g = (bigint >> 8) & 255;
+      const b = bigint & 255;
+      return {
+        r,
+        g,
+        b
+      };
+    }
+
+    // Helper function to convert RGB to HSV
+    function rgbToHsv(r, g, b) {
+      r /= 255, g /= 255, b /= 255;
+      const max = Math.max(r, g, b),
+        min = Math.min(r, g, b);
+      let h, s, v = max;
+
+      const d = max - min;
+      s = max === 0 ? 0 : d / max;
+
+      if (max === min) {
+        h = 0; // achromatic
+      } else {
+        switch (max) {
+          case r:
+            h = (g - b) / d + (g < b ? 6 : 0);
+            break;
+          case g:
+            h = (b - r) / d + 2;
+            break;
+          case b:
+            h = (r - g) / d + 4;
+            break;
+        }
+        h /= 6;
+      }
+
+      return {
+        h: Math.round(h * 360),
+        s: Math.round(s * 100),
+        v: Math.round(v * 100)
+      };
+    }
+
+    // Helper function to convert HSV to RGB
+    function hsvToRgb(h, s, v) {
+      let r, g, b;
+
+      const i = Math.floor(h / 60);
+      const f = h / 60 - i;
+      const p = v * (1 - s / 100);
+      const q = v * (1 - f * s / 100);
+      const t = v * (1 - (1 - f) * s / 100);
+
+      switch (i % 6) {
+        case 0:
+          r = v, g = t, b = p;
+          break;
+        case 1:
+          r = q, g = v, b = p;
+          break;
+        case 2:
+          r = p, g = v, b = t;
+          break;
+        case 3:
+          r = p, g = q, b = v;
+          break;
+        case 4:
+          r = t, g = p, b = v;
+          break;
+        case 5:
+          r = v, g = p, b = q;
+          break;
+      }
+
+      return {
+        r: Math.round(r * 2.55),
+        g: Math.round(g * 2.55),
+        b: Math.round(b * 2.55)
+      };
+    }
+
+    // Helper function to clamp values between min and max
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    // // Function to generate color palette
+    function generateColorPalette(h, s, v) {
+      const shadeNumber = document.getElementById('shade-number');
+      const nShade = parseInt(shadeNumber.innerText)
+      const nMiddle = Math.floor(nShade / 2)
+      const nStep = Math.ceil(nShade / 2)
+      const startIndexLeft = nMiddle - 1
+      const startIndexRight = nMiddle + 1
+      const palette = Array(nShade).fill({
+        h,
+        s,
+        v
+      });
+
+      // The center value is the base color
+      palette[nMiddle] = {
+        h,
+        s,
+        v
+      };
+
+      // Calculate the step size for s and v for the left and right sides
+      const stepSizeLeftS = (s - 0) / nStep;
+      const stepSizeLeftV = (100 - v) / nStep;
+      const stepSizeRightS = (100 - s) / nStep;
+      const stepSizeRightV = (v - 0) / nStep;
+
+      // Generate the left side of the palette
+      for (let i = startIndexLeft; i >= 0; i--) {
+        palette[i] = {
+          h: palette[i + 1].h,
+          s: clamp(palette[i + 1].s - stepSizeLeftS, 0, 100),
+          v: clamp(palette[i + 1].v + stepSizeLeftV, 0, 100)
+        };
+      }
+
+      // Generate the right side of the palette
+      for (let i = startIndexRight; i < nShade; i++) {
+        palette[i] = {
+          h: palette[i - 1].h,
+          s: clamp(palette[i - 1].s + stepSizeRightS, 0, 100),
+          v: clamp(palette[i - 1].v - stepSizeRightV, 0, 100)
+        };
+      }
+
+      return palette;
+    }
+
+    // Function to draw canvas
+    function drawCanvas(canvas, baseHsv, palette, hexColors) {
+      const cWidth = canvas.offsetWidth / 100
+      const cHeight = canvas.offsetHeight / 100
+      const ctx = canvas.getContext('2d');
+      const h = baseHsv.h;
+
+      // Draw gradient background
+      for (let y = 0; y <= 100; y++) {
+        for (let x = 0; x <= 100; x++) {
+          const s = x;
+          const v = 100 - y;
+          const {
+            r,
+            g,
+            b
+          } = hsvToRgb(h, s, v);
+          ctx.fillStyle = `rgb(${r},${g},${b})`;
+          ctx.fillRect((x * cWidth), (y * cHeight), cWidth, cHeight);
+        }
+      }
+
+      // Draw palette points with white border and black fill
+      const nMiddle = Math.floor(palette.length / 2)
+      palette.forEach((color, index) => {
+        const s = color.s
+        const v = color.v
+        const x = (s * cWidth);
+        const y = ((100 - v) * cHeight);
+        let borderSize = 5
+
+        if (index == nMiddle) {
+          borderSize = 8
+        }
+
+        // Draw white border
+        ctx.fillStyle = 'white';
+        ctx.beginPath();
+        ctx.arc(x, y, borderSize, 0, Math.PI * 2, true);
+        ctx.fill();
+
+        // Draw black fill
+        ctx.fillStyle = 'black';
+        ctx.beginPath();
+        ctx.arc(x, y, borderSize - 1, 0, Math.PI * 2, true);
+        ctx.fill();
+
+        // Draw color fill
+        ctx.fillStyle = hexColors[index];
+        ctx.beginPath();
+        ctx.arc(x, y, borderSize - 2, 0, Math.PI * 2, true);
+        ctx.fill();
+      });
+    }
+
+    // Function to generate color palette
+    function generatePalette(e) {
+      const colorPicker = e.target;
+      const hexColor = colorPicker.value;
+      const rgbColor = hexToRgb(hexColor);
+      const hsvColor = rgbToHsv(rgbColor.r, rgbColor.g, rgbColor.b);
+      const palette = generateColorPalette(hsvColor.h, hsvColor.s, hsvColor.v);
+      const paletteDiv = e.target.parentElement.getElementsByClassName('palette')[0];
+      const inputHexColor = e.target.parentElement.getElementsByClassName('input-hex-color')[0];
+      inputHexColor.value = hexColor.toUpperCase();
+      const hexColors = Array(palette.length).fill('')
+      paletteDiv.innerHTML = '';
+
+      palette.forEach((color, index) => {
+        const rgb = hsvToRgb(color.h, color.s, color.v);
+        const hex = ((1 << 24) + (rgb.r << 16) + (rgb.g << 8) + rgb.b).toString(16).slice(1).toUpperCase()
+        const hexText = `#${hex}`;
+        hexColors[index] = hexText;
+        const colorBox = document.createElement('div');
+        colorBox.className = 'color-box';
+        colorBox.style.backgroundColor = hexText;
+
+        const hexLabel = document.createElement('div');
+        hexLabel.className = 'hex-label';
+        hexLabel.textContent = hexText;
+        colorBox.appendChild(hexLabel);
+        colorBox.addEventListener('click', () => {
+          navigator.clipboard.writeText(hex);
+        });
+
+        paletteDiv.appendChild(colorBox);
+      });
+
+      const hoverText = document.createElement('div');
+      hoverText.className = 'hover-text';
+      hoverText.textContent = 'Click to copy hex code.';
+
+      paletteDiv.addEventListener('click', () => {
+        if (hoverText.parentElement === paletteDiv) {
+          hoverText.textContent = 'Copied.'
+        }
+      });
+      paletteDiv.addEventListener('mouseover', () => {
+        hoverText.textContent = 'Click to copy hex code.';
+        paletteDiv.appendChild(hoverText);
+      });
+      paletteDiv.addEventListener('mouseout', () => {
+        if (hoverText.parentElement === paletteDiv) {
+          paletteDiv.removeChild(hoverText);
+        }
+      });
+
+      const canvas = e.target.parentElement.getElementsByClassName('color-canvas')[0]
+      canvas.addEventListener('click', () => {
+        colorPicker.click()
+      });
+
+      inputHexColor.addEventListener('click', () => {
+        colorPicker.click()
+      });
+
+      drawCanvas(canvas, hsvColor, palette, hexColors);
+      reCreateHexColorsToCookie()
+    }
+
+    // Function to re-generate Palette
+    function regeneratePalette() {
+      const colorElements = document.getElementsByClassName('colors')[0]
+      const palettes = colorElements.getElementsByClassName('palette-box');
+
+      Array.from(palettes).forEach(palette => {
+        generatePalette({
+          target: palette.getElementsByClassName('input-color')[0]
+        })
+      })
+    }
+
+    // Function to update shade number
+    function updateShadeNumber(value) {
+      const shadeNumber = document.getElementById('shade-number');
+      const currentNumber = parseInt(shadeNumber.innerText)
+
+      if (value == 1 && currentNumber < 21) {
+        shadeNumber.innerText = currentNumber + 2
+        regeneratePalette()
+      }
+
+      if (value == -1 && currentNumber > 3) {
+        shadeNumber.innerText -= 2
+        regeneratePalette()
+      }
+
+      setCookie('shade-number', parseInt(shadeNumber.innerText))
+    }
+
+    // Function to random hex color
+    function randomHexColor() {
+      return '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+    }
+
+    // Function to add more color
+    function addMoreColor(color = null) {
+      const colorElements = document.getElementsByClassName('colors')[0]
+      const newPaletteBox = document.createElement('div');
+      const hexColor = randomHexColor();
+      newPaletteBox.className = 'palette-box';
+      newPaletteBox.innerHTML = `
+        <canvas class="color-canvas" width="200px" height="200px"></canvas>
+        <input class="input-hex-color" type="text" value="${hexColor}" onchange="generatePalette(event)" />
+        <input class="input-color" type="color" value="${hexColor}" onchange="generatePalette(event)" />
+        <div class="palette"></div>
+        <div class="delete-palette-box" onclick="deleteColor(event)">🗑️</div>
+        `
+      const inputColor = newPaletteBox.getElementsByClassName('input-color')[0]
+      const inputHexColor = newPaletteBox.getElementsByClassName('input-hex-color')[0]
+
+      if (color != null) {
+        inputColor.value = color
+        inputHexColor.value = color
+      }
+
+      colorElements.appendChild(newPaletteBox);
+      generatePalette({
+        target: inputColor
+      })
+    }
+
+    // Function to delete color
+    function deleteColor(e) {
+      const colorElements = document.getElementsByClassName('colors')[0]
+      const paletteBoxes = colorElements.getElementsByClassName('palette-box');
+      const paletteBox = e.target.parentElement
+
+      const inputColor = paletteBox.getElementsByClassName('input-color')[0]
+      const hexColor = inputColor.value.toUpperCase()
+
+      const hexColorsFromCookie = getCookie('hex-colors') ?? []
+      const index = hexColorsFromCookie.indexOf(hexColor)
+      if (hexColorsFromCookie.indexOf(hexColor) > -1) {
+        hexColorsFromCookie.splice(index, 1);
+        setCookie('hex-colors', hexColorsFromCookie)
+      }
+
+      if (paletteBoxes.length != 0) {
+        colorElements.removeChild(paletteBox)
+      }
+    }
+
+    // Function to set cookie
+    function setCookie(name, value = [], days = 1) {
+      const date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      const expires = "expires=" + date.toUTCString();
+      document.cookie = name + "=" + JSON.stringify(value) + ";" + expires + ";path=/";
+    }
+
+    // Function to get cookie
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return JSON.parse(c.substring(nameEQ.length, c.length));
+      }
+      return null;
+    }
+
+    //
+    function reCreateHexColorsToCookie() {
+      const colorElements = document.getElementsByClassName('colors')[0]
+      const paletteBoxes = colorElements.getElementsByClassName('palette-box');
+      const hexColors = []
+
+      Array.from(paletteBoxes).forEach(paletteBox => {
+        const inputColor = paletteBox.getElementsByClassName('input-color')[0]
+        const hexColor = inputColor.value.toUpperCase()
+
+        if (hexColors.indexOf(hexColor) === -1) {
+          hexColors.push(hexColor)
+        }
+      })
+      setCookie('hex-colors', hexColors)
+    }
+
+    // Function to initialize
+    function initialize() {
+      const shadeNumberFromCookie = getCookie('shade-number')
+      if (shadeNumberFromCookie == null) {
+        const shadeNumber = document.getElementById('shade-number');
+        const currentNumber = parseInt(shadeNumber.innerText)
+        setCookie('shade-number', currentNumber)
+      } else {
+        const shadeNumber = document.getElementById('shade-number');
+        shadeNumber.innerText = shadeNumberFromCookie
+      }
+
+      const hexColorsFromCookie = getCookie('hex-colors') ?? []
+      if (hexColorsFromCookie.length == 0) {
+        const hexColor = randomHexColor()
+        addMoreColor(hexColor)
+      } else {
+        hexColorsFromCookie.forEach(color => {
+          addMoreColor(color)
+        })
+      }
+    }
+
+    initialize()
+  </script>
+</body>
+
+</html>
