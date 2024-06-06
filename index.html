@@ -7,6 +7,12 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%3C!--%20Generator%3A%20Adobe%20Illustrator%2019.0.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%3C!--%20License%3A%20CC0.%20Made%20by%20SVG%20Repo%3A%20https%3A%2F%2Fwww.svgrepo.com%2Fsvg%2F34540%2Fcolor%20--%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20496%20496%22%20style%3D%22enable-background%3Anew%200%200%20496%20496%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20style%3D%22fill%3A%23FF2970%3B%22%20d%3D%22M496%2C465.6c0%2C16.8-13.6%2C30.4-30.4%2C30.4h-208c-16.8%2C0-30.4-13.6-30.4-30.4v-208c0-16.8%2C13.6-30.4%2C30.4-30.4h208c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4V465.6z%22%2F%3E%3Cpath%20style%3D%22fill%3A%23D10257%3B%22%20d%3D%22M465.6%2C227.2c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4v208c0%2C16.8-13.6%2C30.4-30.4%2C30.4h-208c-16.8%2C0-30.4-13.6-30.4-30.4%22%2F%3E%3Cpath%20style%3D%22fill%3A%235349B7%3B%22%20d%3D%22M382.4%2C352c0%2C16.8-13.6%2C30.4-30.4%2C30.4H144c-16.8%2C0-30.4-13.6-30.4-30.4V144c0-16.8%2C13.6-30.4%2C30.4-30.4h208c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4V352z%22%2F%3E%3Cg%3E%3Cpath%20style%3D%22fill%3A%233B38A5%3B%22%20d%3D%22M171.2%2C113.6l-57.6%2C57.6V292h148c16.8%2C0%2C30.4-13.6%2C30.4-30.4v-148H171.2z%22%2F%3E%3Cpath%20style%3D%22fill%3A%233B38A5%3B%22%20d%3D%22M352%2C113.6c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4v208c0%2C16.8-13.6%2C30.4-30.4%2C30.4H144c-16.8%2C0-30.4-13.6-30.4-30.4%22%2F%3E%3C%2Fg%3E%3Cpath%20style%3D%22fill%3A%23D10257%3B%22%20d%3D%22M274.4%2C227.2l-47.2%2C47.2v126.4h143.2c16.8%2C0%2C30.4-13.6%2C30.4-30.4V227.2H274.4z%22%2F%3E%3Cpath%20style%3D%22fill%3A%2337167F%3B%22%20d%3D%22M257.6%2C227.2c-16.8%2C0-30.4%2C13.6-30.4%2C30.4v124.8H352c16.8%2C0%2C30.4-13.6%2C30.4-30.4V227.2H257.6z%22%2F%3E%3Cpath%20style%3D%22fill%3A%232EB9FF%3B%22%20d%3D%22M268.8%2C238.4c0%2C16.8-13.6%2C30.4-30.4%2C30.4h-208C13.6%2C268.8%2C0%2C255.2%2C0%2C238.4v-208C0%2C13.6%2C13.6%2C0%2C30.4%2C0h208c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4V238.4z%22%2F%3E%3Cpath%20style%3D%22fill%3A%230097F4%3B%22%20d%3D%22M238.4%2C0c16.8%2C0%2C30.4%2C13.6%2C30.4%2C30.4v208c0%2C16.8-13.6%2C30.4-30.4%2C30.4h-208C13.6%2C268.8%2C0%2C255.2%2C0%2C238.4%22%2F%3E%3C%2Fsvg%3E" />
   <title>Color Palette Generator</title>
   <style>
+    :root {
+      --btn-background-color: #F1BFFA;
+      --shade-number-color: #ffffff;
+      --shade-number-bg-color: #9B38AD;
+    }
+
     body {
       margin: 50px 50px;
       padding: 0;
@@ -32,6 +38,7 @@
       /* border: 1px solid red; */
       width: fit-content;
       display: flex;
+      flex-wrap: wrap;
       user-select: none;
     }
 
@@ -43,7 +50,7 @@
       font-size: 16px;
       font-weight: 500;
       color: #000000;
-      background-color: #DEE069;
+      background-color: var(--btn-background-color);
 
       display: flex;
       justify-content: center;
@@ -62,7 +69,7 @@
       margin-left: 50px;
       padding: 0 30px;
 
-      background-color: #DEE069;
+      background-color: var(--btn-background-color);
 
       display: flex;
     }
@@ -98,8 +105,8 @@
       padding: 0;
       border-radius: 3px;
 
-      color: #000000;
-      background-color: #fff;
+      color: var(--shade-number-color);
+      background-color: var(--shade-number-bg-color);
       font-size: 16px;
       font-weight: 500;
 
@@ -139,6 +146,7 @@
       display: flex;
       flex-direction: column;
 
+      position: relative;
     }
 
     canvas {
@@ -148,9 +156,8 @@
 
     .input-hex-color {
       width: 200px;
-      box-sizing: border-box;
-      width: 200px;
       height: 40px;
+      box-sizing: border-box;
 
       font-size: 20px;
       text-align: center;
@@ -158,18 +165,23 @@
       border: 0;
       outline: none;
       margin: 0 0 20px 0;
+
+      display: inline-block;
     }
 
     .input-color {
       box-sizing: border-box;
-      width: 200px;
-      height: 60px;
+      width: 0px;
+      height: 0px;
+
+      position: absolute;
+      top: -10px;
+      right: 0;
 
       border: 0;
       padding: 0;
       background: none;
 
-      display: none;
     }
 
     .input-color:hover {
@@ -259,6 +271,7 @@
       /* border: 1px solid red; */
       width: 200px;
       height: 50px;
+      margin-top: 5px;
       border-radius: 30px;
 
       font-size: 26px;
@@ -272,7 +285,93 @@
     }
 
     .delete-palette-box:hover {
-      background-color: #DEE069;
+      background-color: var(--btn-background-color);
+    }
+
+    @media only screen and (max-width: 685px) {
+      h1 {
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .input-shade-tab>* {
+        font-size: 14px;
+      }
+
+      .control-tab {
+        width: 100%;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .control-tab {
+        margin: 10px 0px;
+        height: fit-content;
+        font-size: 12px;
+      }
+
+      .add-color-btn,
+      .input-shade-tab,
+      .shade-text,
+      .input-shade-number,
+      #shade-number,
+      .shade-btn {
+        width: fit-content;
+        height: 25px;
+        margin: 0;
+        padding: 0 10px;
+        font-size: 12px;
+      }
+
+      .shade-btn:first-child {
+        order: 2;
+      }
+
+      .input-shade-number>div {
+        display: flex;
+      }
+
+      .colors {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .palette-box {
+        margin-top: 10px;
+      }
+
+      .input-hex-color {
+        height: 40px;
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+
+      .palette {
+        margin-top: 0;
+      }
+
+      .delete-palette-box {
+        height: 25px;
+        margin: 2 0 0 0;
+        font-size: 12px;
+      }
+
+      .hover-text {
+        width: 200px;
+        height: 40px;
+        margin: 0;
+        padding: 0;
+
+        top: -40px;
+        left: 0px;
+
+        font-size: 14px;
+        font-weight: 400;
+      }
+
     }
   </style>
 </head>
@@ -554,7 +653,7 @@
       });
 
       drawCanvas(canvas, hsvColor, palette, hexColors);
-      reCreateHexColorsToCookie()
+      syncHexColorsToCookie()
     }
 
     // Function to re-generate Palette
@@ -660,8 +759,8 @@
       return null;
     }
 
-    //
-    function reCreateHexColorsToCookie() {
+    // Function to sync hex color from palette box
+    function syncHexColorsToCookie() {
       const colorElements = document.getElementsByClassName('colors')[0]
       const paletteBoxes = colorElements.getElementsByClassName('palette-box');
       const hexColors = []
