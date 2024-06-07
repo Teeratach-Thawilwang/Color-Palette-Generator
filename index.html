@@ -159,7 +159,7 @@
       height: 40px;
       box-sizing: border-box;
 
-      font-size: 20px;
+      font-size: 18px;
       text-align: center;
 
       border: 0;
@@ -243,28 +243,20 @@
       color: #000000;
       font-size: 12px;
       text-align: center;
+      order: 3;
     }
 
-    .hover-text {
-      height: 60px;
-      border-radius: 2px;
-      padding: 0 10px;
+    .star-text {
+      order: 1;
+      margin-left: 5px;
+      margin-right: auto;
+    }
 
-      position: absolute;
-      top: -80px;
-      left: 0px;
-
-      font-size: 18px;
-      font-weight: 500;
-      color: #000000;
-      background-color: #fff;
-      box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.55);
-
-      display: flex;
-      text-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      z-index: 99;
+    .copy-text,
+    .copied-text {
+      order: 2;
+      margin-left: auto;
+      margin-right: 5px;
     }
 
     .delete-palette-box {
@@ -343,10 +335,10 @@
       }
 
       .input-hex-color {
-        height: 40px;
+        height: 35px;
         font-size: 14px;
         font-weight: 400;
-        margin-bottom: 0;
+        margin-bottom: 5px;
       }
 
       .palette {
@@ -358,20 +350,6 @@
         margin: 2 0 0 0;
         font-size: 12px;
       }
-
-      .hover-text {
-        width: 200px;
-        height: 40px;
-        margin: 0;
-        padding: 0;
-
-        top: -40px;
-        left: 0px;
-
-        font-size: 14px;
-        font-weight: 400;
-      }
-
     }
   </style>
 </head>
@@ -604,6 +582,20 @@
       const hexColors = Array(palette.length).fill('')
       paletteDiv.innerHTML = '';
 
+      const shadeNumber = document.getElementById('shade-number');
+      const nShade = parseInt(shadeNumber.innerText)
+      const nMiddle = Math.floor(nShade / 2)
+
+      const starText = document.createElement('div');
+      const copyText = document.createElement('div');
+      const copiedText = document.createElement('div');
+      starText.className = 'star-text';
+      starText.textContent = '⭐';
+      copyText.className = 'copy-text';
+      copyText.textContent = '💾';
+      copiedText.className = 'copied-text';
+      copiedText.textContent = '✅';
+
       palette.forEach((color, index) => {
         const rgb = hsvToRgb(color.h, color.s, color.v);
         const hex = ((1 << 24) + (rgb.r << 16) + (rgb.g << 8) + rgb.b).toString(16).slice(1).toUpperCase()
@@ -612,6 +604,28 @@
         const colorBox = document.createElement('div');
         colorBox.className = 'color-box';
         colorBox.style.backgroundColor = hexText;
+
+        if (index == nMiddle) {
+          colorBox.appendChild(starText)
+        }
+
+        colorBox.addEventListener('click', () => {
+          if (copyText.parentElement === colorBox) {
+            colorBox.removeChild(copyText);
+            colorBox.appendChild(copiedText)
+          }
+        });
+        colorBox.addEventListener('mouseover', () => {
+          colorBox.appendChild(copyText);
+        });
+        colorBox.addEventListener('mouseout', () => {
+          if (copyText.parentElement === colorBox) {
+            colorBox.removeChild(copyText);
+          }
+          if (copiedText.parentElement === colorBox) {
+            colorBox.removeChild(copiedText);
+          }
+        });
 
         const hexLabel = document.createElement('div');
         hexLabel.className = 'hex-label';
@@ -622,25 +636,6 @@
         });
 
         paletteDiv.appendChild(colorBox);
-      });
-
-      const hoverText = document.createElement('div');
-      hoverText.className = 'hover-text';
-      hoverText.textContent = 'Click to copy hex code.';
-
-      paletteDiv.addEventListener('click', () => {
-        if (hoverText.parentElement === paletteDiv) {
-          hoverText.textContent = 'Copied.'
-        }
-      });
-      paletteDiv.addEventListener('mouseover', () => {
-        hoverText.textContent = 'Click to copy hex code.';
-        paletteDiv.appendChild(hoverText);
-      });
-      paletteDiv.addEventListener('mouseout', () => {
-        if (hoverText.parentElement === paletteDiv) {
-          paletteDiv.removeChild(hoverText);
-        }
       });
 
       const canvas = e.target.parentElement.getElementsByClassName('color-canvas')[0]
