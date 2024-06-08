@@ -133,6 +133,25 @@
       cursor: pointer;
     }
 
+    .input-copy {
+      /* border: 1px solid red; */
+      height: 50px;
+      border-radius: 30px;
+      margin-left: 50px;
+      padding: 0 30px;
+
+      background-color: var(--btn-background-color);
+
+      color: #000000;
+      font-size: 16px;
+      font-weight: 500;
+
+      display: flex;
+      text-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+
     .colors {
       /* border: 1px solid red; */
       display: grid;
@@ -303,6 +322,21 @@
       background-color: var(--btn-background-color);
     }
 
+    @media only screen and (max-width: 1000px) {
+      .control-tab {
+        /* border: 1px solid red; */
+
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .control-tab>* {
+        margin: 10px auto;
+      }
+    }
+
     @media only screen and (max-width: 685px) {
       h1 {
         flex-wrap: wrap;
@@ -317,9 +351,7 @@
         width: 100%;
         gap: 10px;
         justify-content: center;
-      }
 
-      .control-tab {
         margin: 10px 0px;
         height: fit-content;
         font-size: 12px;
@@ -330,7 +362,8 @@
       .shade-text,
       .input-shade-number,
       #shade-number,
-      .shade-btn {
+      .shade-btn,
+      .input-copy {
         width: fit-content;
         height: 25px;
         margin: 0;
@@ -394,6 +427,7 @@
         </div>
       </div>
     </div>
+    <div class="input-copy" onClick="setCopyValue(event)">Copy Hex Code</div>
   </div>
   <div class="colors">
   </div>
@@ -650,7 +684,12 @@
         colorBox.appendChild(hexLabel);
 
         colorBox.addEventListener('click', () => {
-          navigator.clipboard.writeText(hex);
+          const inputTextCopy = document.getElementsByClassName('input-copy')[0]
+          if (inputTextCopy.innerText == 'Copy Hex Code') {
+            navigator.clipboard.writeText(hex);
+            return
+          }
+          navigator.clipboard.writeText(`${rgb.r}, ${rgb.g}, ${rgb.b}`);
         });
 
         paletteDiv.appendChild(colorBox);
@@ -787,6 +826,16 @@
         }
       })
       setCookie('hex-colors', hexColors)
+    }
+
+    //
+    function setCopyValue(e) {
+      const inputTextCopy = e.target
+      if (e.target.innerText == 'Copy RGB') {
+        inputTextCopy.innerText = 'Copy Hex Code'
+        return
+      }
+      inputTextCopy.innerText = 'Copy RGB'
     }
 
     // Function to initialize
