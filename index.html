@@ -222,23 +222,27 @@
       justify-content: end;
       align-items: center;
 
-      cursor: pointer;
+      position: relative;
+
+      cursor: grab;
+      user-select: none;
     }
 
-    .color-box:hover {
-      cursor: pointer;
-    }
-
-    .color-box:hover>.hex-label {
+    .color-box:hover>.hex-label,
+    .color-box:hover>.shade-number {
       opacity: 0.8;
+    }
+
+    .color-box:active {
+      cursor: grabbing;
     }
 
     .hex-label {
       border-radius: 3px;
       width: 70px;
-      margin-right: 10px;
-      padding: 4px 4px;
-      background-color: rgba(255, 255, 255, 0.7);
+      margin-right: 5px;
+      padding: 2px 0px;
+      background-color: rgba(255, 255, 255, 0.5);
 
       color: #000000;
       font-size: 12px;
@@ -246,17 +250,36 @@
       order: 3;
     }
 
-    .star-text {
+    .shade-number {
+      border-radius: 10px;
+      width: 40px;
+      margin-left: 5px;
+      margin-right: auto;
+      padding: 2px 0px;
+      background-color: rgba(0, 0, 0, 0.5);
+
+      color: #ffffff;
+      font-size: 12px;
+      text-align: center;
       order: 1;
+    }
+
+    .star-text {
+      display: none;
+      order: 2;
       margin-left: 5px;
       margin-right: auto;
     }
 
     .copy-text,
     .copied-text {
-      order: 2;
-      margin-left: auto;
-      margin-right: 5px;
+      display: none;
+      border: 0;
+      position: absolute;
+      top: 0;
+      right: -21px;
+      transform: translateY(50%);
+      z-index: 99;
     }
 
     .delete-palette-box {
@@ -586,16 +609,6 @@
       const nShade = parseInt(shadeNumber.innerText)
       const nMiddle = Math.floor(nShade / 2)
 
-      const starText = document.createElement('div');
-      const copyText = document.createElement('div');
-      const copiedText = document.createElement('div');
-      starText.className = 'star-text';
-      starText.textContent = '⭐';
-      copyText.className = 'copy-text';
-      copyText.textContent = '💾';
-      copiedText.className = 'copied-text';
-      copiedText.textContent = '✅';
-
       palette.forEach((color, index) => {
         const rgb = hsvToRgb(color.h, color.s, color.v);
         const hex = ((1 << 24) + (rgb.r << 16) + (rgb.g << 8) + rgb.b).toString(16).slice(1).toUpperCase()
@@ -603,34 +616,39 @@
         hexColors[index] = hexText;
         const colorBox = document.createElement('div');
         colorBox.className = 'color-box';
+        colorBox.innerHTML = `
+        <div class='shade-number'>${(index + 1) * 100}</div>
+        <div class='star-text'>⭐</div>
+        <div class='copy-text'>💾</div>
+        <div class='copied-text'>✅</div>
+        `;
         colorBox.style.backgroundColor = hexText;
 
-        if (index == nMiddle) {
-          colorBox.appendChild(starText)
-        }
+        const starText = colorBox.getElementsByClassName('star-text')[0]
+        const copyText = colorBox.getElementsByClassName('copy-text')[0]
+        const copiedText = colorBox.getElementsByClassName('copied-text')[0]
 
+
+        if (index == nMiddle) {
+          starText.style.display = 'block';
+        }
         colorBox.addEventListener('click', () => {
-          if (copyText.parentElement === colorBox) {
-            colorBox.removeChild(copyText);
-            colorBox.appendChild(copiedText)
-          }
+          copyText.style.display = 'none';
+          copiedText.style.display = 'block';
         });
         colorBox.addEventListener('mouseover', () => {
-          colorBox.appendChild(copyText);
+          copyText.style.display = 'block';
         });
         colorBox.addEventListener('mouseout', () => {
-          if (copyText.parentElement === colorBox) {
-            colorBox.removeChild(copyText);
-          }
-          if (copiedText.parentElement === colorBox) {
-            colorBox.removeChild(copiedText);
-          }
+          copyText.style.display = 'none';
+          copiedText.style.display = 'none';
         });
 
         const hexLabel = document.createElement('div');
         hexLabel.className = 'hex-label';
         hexLabel.textContent = hexText;
         colorBox.appendChild(hexLabel);
+
         colorBox.addEventListener('click', () => {
           navigator.clipboard.writeText(hex);
         });
