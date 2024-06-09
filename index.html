@@ -634,8 +634,6 @@
       const hsvColor = rgbToHsv(rgbColor.r, rgbColor.g, rgbColor.b);
       const palette = generateColorPalette(hsvColor.h, hsvColor.s, hsvColor.v);
       const paletteDiv = e.target.parentElement.getElementsByClassName('palette')[0];
-      const inputHexColor = e.target.parentElement.getElementsByClassName('input-hex-color')[0];
-      inputHexColor.value = hexColor.toUpperCase();
       const hexColors = Array(palette.length).fill('')
       paletteDiv.innerHTML = '';
 
@@ -700,10 +698,6 @@
         colorPicker.click()
       });
 
-      inputHexColor.addEventListener('click', () => {
-        colorPicker.click()
-      });
-
       drawCanvas(canvas, hsvColor, palette, hexColors);
       syncHexColorsToCookie()
     }
@@ -751,7 +745,7 @@
       newPaletteBox.className = 'palette-box';
       newPaletteBox.innerHTML = `
         <canvas class="color-canvas" width="200px" height="200px"></canvas>
-        <input class="input-hex-color" type="text" value="${hexColor}" onchange="generatePalette(event)" />
+        <input class="input-hex-color" type="text" placeholder="ชื่อสี" />
         <input class="input-color" type="color" value="${hexColor}" onchange="generatePalette(event)" />
         <div class="palette"></div>
         <div class="delete-palette-box" onclick="deleteColor(event)">🗑️</div>
@@ -761,7 +755,7 @@
 
       if (color != null) {
         inputColor.value = color
-        inputHexColor.value = color
+        // inputHexColor.value = color
       }
 
       colorElements.appendChild(newPaletteBox);
